@@ -425,29 +425,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    // Parse the second value from the EditText
                     v2 = Float.parseFloat(String.valueOf(ET_Result.getText()));
 
                     if (add) {
-                        ET_Result.setText(v1 + v2 + ""); // Perform addition
-                        add = false; // Reset flag
+                        ET_Result.setText(v1 + v2 + "");
+                        add = false;
                     } else if (sub) {
-                        ET_Result.setText(v1 - v2 + ""); // Perform subtraction
-                        sub = false; // Reset flag
+                        ET_Result.setText(v1 - v2 + "");
+                        sub = false;
                     } else if (multi) {
-                        ET_Result.setText(v1 * v2 + ""); // Perform multiplication
-                        multi = false; // Reset flag
+                        ET_Result.setText(v1 * v2 + "");
+                        multi = false; 
                     } else if (div) {
-                        if (v2 == 0) {
-                            // Division by zero check
+                        if (v2 == 0) {                
                             ET_Result.setText("Error: Division by Zero");
                         } else {
-                            ET_Result.setText(v1 / v2 + ""); // Perform division
+                            ET_Result.setText(v1 / v2 + "");
                         }
-                        div = false; // Reset flag
+                        div = false;
                     }
                 } catch (NumberFormatException e) {
-                    // Handle invalid input in ET_Result
                     ET_Result.setText("Error: Invalid Input");
                 }
             }
